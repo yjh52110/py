@@ -6,7 +6,7 @@ base_model = "internlm/internlm-20b"
 peft_model = "FinGPT/fingpt-sentiment_internlm-20b_lora"
 tokenizer = LlamaTokenizerFast.from_pretrained(base_model, trust_remote_code=True)
 tokenizer.pad_token = tokenizer.eos_token
-model = LlamaForCausalLM.from_pretrained(base_model, trust_remote_code=True, device_map = "cuda:0", load_in_8bit = True,)
+model = LlamaForCausalLM.from_pretrained(base_model, trust_remote_code=True, device_map = "cpu", load_in_8bit = True,)
 model = PeftModel.from_pretrained(model, peft_model)
 model = model.eval()
 

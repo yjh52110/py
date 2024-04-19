@@ -9,7 +9,6 @@ from transformers import (
 )
 from peft import PeftModel
 
-
 class RequestHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         print("do_POST")

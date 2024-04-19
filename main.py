@@ -22,6 +22,7 @@ model = model.eval()
 
 class RequestHandler(BaseHTTPRequestHandler):
     def do_POST(self):
+        print("do_POST method called")
         content_length = int(self.headers["Content-Length"])
         post_data = self.rfile.read(content_length)
         input_text = post_data.decode("utf-8")

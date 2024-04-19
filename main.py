@@ -37,8 +37,3 @@ for sentiment in out_text:
 # positive
 # neutral
 # negative
-
-
-
-
-

@@ -35,6 +35,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         res_sentences = [tokenizer.decode(i) for i in res]
         out_text = [o.split("Answer: ")[1] for o in res_sentences]
         results.extend(out_text)
+        print(out_text)
 
         # Prepare response
         self.send_response(200)

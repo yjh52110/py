@@ -2,8 +2,8 @@ from transformers import AutoModel, AutoTokenizer, AutoModelForCausalLM, LlamaFo
 from peft import PeftModel  # 0.5.0
 
 # Load Models
-base_model = "internlm/internlm-20b" 
-peft_model = "FinGPT/fingpt-sentiment_internlm-20b_lora"
+base_model = "NousResearch/Llama-2-13b-hf"
+peft_model = "FinGPT/fingpt-sentiment_llama2-13b_lora"
 tokenizer = LlamaTokenizerFast.from_pretrained(base_model, trust_remote_code=True)
 tokenizer.pad_token = tokenizer.eos_token
 model = LlamaForCausalLM.from_pretrained(base_model, trust_remote_code=True, device_map = "cuda:0", load_in_8bit = True,)
@@ -33,11 +33,10 @@ out_text = [o.split("Answer: ")[1] for o in res_sentences]
 for sentiment in out_text:
     print(sentiment)
 
-# Output:    
+# Output:
 # positive
 # neutral
 # negative
-
 
 
 
